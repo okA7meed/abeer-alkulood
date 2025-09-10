@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عبير الخلود - عطور فاخرة</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+  window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    setTimeout(() => {
+      preloader.classList.add("hidden");
+    }, 2500);
+  });
+</script>
+
+<body class="light-mode">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <img src="/img/Logo.png" alt="عبير الخلود" class="preloader-logo">
+      <p class="loading-text">جاري التحميل...</p>
+    </div>
+  </div>
+
+  <!-- زر تبديل الوضع -->
+  <div class="theme-switcher">
+    <input type="checkbox" id="theme-toggle" class="theme-checkbox">
+    <label for="theme-toggle" class="theme-label">
+      <i class="fas fa-moon"></i>
+      <i class="fas fa-sun"></i>
+      <span class="theme-ball"></span>
+    </label>
+  </div>
+
+  <!-- الشريط العلوي -->
+  <header>
+    <div class="container header-content">
+      <a href="#" class="logo">
+        <img src="img/logo.png" alt="عبير الخلود" class="logo-img">
+      </a>
+      
+      <!-- قائمة الهامبرغر للجوال -->
+      <div class="hamburger-menu" id="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <!-- أيقونة السلة -->
+      <div class="cart-icon" id="cartIcon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </div>
+
+      <!-- نافذة السلة -->
+      <div class="cart-panel" id="cartPanel">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <h3>مشترياتي</h3>
+          <button id="closeCart" style="background: none; border: none; color: var(--gold); font-size: 20px; cursor: pointer;">×</button>
+        </div>
+        <div id="cartItems"></div>
+        <button class="btn checkout-btn" id="checkout-btn">إتمام الشراء</button>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#home" class="nav-link">الرئيسية</a></li>
+          <li><a href="#advisor" class="nav-link">المستشار الذكي</a></li>
+          <li><a href="#products" class="nav-link">مجموعتنا</a></li>
+          <li><a href="#testimonials" class="nav-link">آراء العملاء</a></li>
+          <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-icons">
+        <a href="#"><i class="fas fa-search"></i></a>
+        <a href="#"><i class="fas fa-user"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- قسم الهيرو -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h1>اكتشف عبير الخلود</h1>
+      <p class="special-text">استكشف مجموعة العطور الفاخرة التي صممت خصيصًا لتجسد فخامة التراث وحداثة العصر في مكان واحد</p>
+      <a href="#advisor" class="btn" id="start-advisor">ابدأ رحلتك العطرية</a>
+    </div>
+  </section>
+
+  <!-- المستشار الذكي -->
+  <section class="advisor-section" id="advisor">
+    <div class="container">
+      <h2 class="section-title">مستشار العطور الذكي</h2>
+      <p>اختر ما يناسبك وسنقترح عليك العطر المثالي</p>
+      
+      <div class="advisor-container">
+        <div class="advisor-step active" id="step-1">
+          <h3 class="advisor-question">إيه الإحساس اللي بتدور عليه النهاردة؟</h3>
+          <div class="options-container">
+            <button class="option-btn" data-value="نشاط وحيوية">نشاط وحيوية</button>
+            <button class="option-btn" data-value="رومانسية">رومانسية</button>
+            <button class="option-btn" data-value="ثقة وجاذبية">ثقة وجاذبية</button>
+            <button class="option-btn" data-value="هدوء واسترخاء">هدوء واسترخاء</button>
+          </div>
+        </div>
+        
+        <div class="advisor-step" id="step-2">
+          <h3 class="advisor-question">ما نوع الروائح التي تفضلها؟</h3>
+          <div class="options-container">
+            <button class="option-btn" data-value="زهور">زهور</button>
+            <button class="option-btn" data-value="فواكه">فواكه</button>
+            <button class="option-btn" data-value="أخشاب">أخشاب</button>
+            <button class="option-btn" data-value="توابل">توابل</button>
+          </div>
+        </div>
+        
+        <div class="advisor-step" id="step-3">
+          <h3 class="advisor-question">ما وقت الاستخدام؟</h3>
+          <div class="options-container">
+            <button class="option-btn" data-value="نهار">نهار</button>
+            <button class="option-btn" data-value="ليل">ليل</button>
+            <button class="option-btn" data-value="مناسبة خاصة">مناسبة خاصة</button>
+          </div>
+        </div>
+        
+        <div class="advisor-step" id="step-results">
+          <h3 class="advisor-question">هذه العطور تناسبك</h3>
+          <div class="results-container" id="results-container">
+            <!-- سيتم إضافة العطور المقترحة هنا عبر JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم المنتجات -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <h2 class="section-title">منتجاتنا المميزة</h2>
+      <p>اكتشف مجموعة العطور الفاخرة التي صممت بعناية</p>
+      
+      <div class="products-grid">
+        <!-- المنتج 1 -->
+        <div class="product-card">
+          <div class="product-img-container">
+            <img src="img/a1.jpg" alt="عطر سحر الليل" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">سحر الليل</h3>
+            <p class="product-desc">عطر غامض يجمع بين الفخامة والجاذبية</p>
+            <span class="product-price">750 ر.س</span>
+            <div class="product-actions">
+              <button class="btn add-to-cart" data-id="1" data-name="سحر الليل" data-price="750" data-image="img/a1.jpg">
+                <i class="fas fa-shopping-cart"></i> أضف إلى السلة
+              </button>
+              <button class="btn buy-now" data-id="1" data-name="سحر الليل" data-price="750" data-image="img/a1.jpg">
+                <i class="fas fa-bolt"></i> اشتري الآن
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- المنتج 2 -->
+        <div class="product-card">
+          <div class="product-img-container">
+            <img src="img/a5.jpg" alt="عطر حديقة الجنة" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">حديقة الجنة</h3>
+            <p class="product-desc">مزيج من أزهار الربيع النادرة والمنعشة</p>
+            <span class="product-price">650 ر.س</span>
+            <div class="product-actions">
+              <button class="btn add-to-cart" data-id="2" data-name="حديقة الجنة" data-price="650" data-image="img/a5.jpg">
+                <i class="fas fa-shopping-cart"></i> أضف إلى السلة
+              </button>
+              <button class="btn buy-now" data-id="2" data-name="حديقة الجنة" data-price="650" data-image="img/a5.jpg">
+                <i class="fas fa-bolt"></i> اشتري الآن
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- المنتج 3 -->
+        <div class="product-card">
+          <div class="product-img-container">
+            <img src="img/a6.jpg" alt="عطر أمبر الملكي" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">أمير الملكي</h3>
+            <p class="product-desc">عطر شرقي فاخر يمزج العنبر والخشب النادر</p>
+            <span class="product-price">850 ر.س</span>
+            <div class="product-actions">
+              <button class="btn add-to-cart" data-id="3" data-name="أمير الملكي" data-price="850" data-image="img/a6.jpg">
+                <i class="fas fa-shopping-cart"></i> أضف إلى السلة
+              </button>
+              <button class="btn buy-now" data-id="3" data-name="أمير الملكي" data-price="850" data-image="img/a6.jpg">
+                <i class="fas fa-bolt"></i> اشتري الآن
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- المنتج 4 -->
+        <div class="product-card">
+          <div class="product-img-container">
+            <img src="img/a7.jpg" alt="سلطاني" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">سلطاني</h3>
+            <p class="product-desc">عطر يجمع بين فخامة العود ودفء العنبر، ليمنحك حضورًا ملكيًا يبقى في الذاكرة.</p>
+            <span class="product-price">850 ر.س</span>
+            <div class="product-actions">
+              <button class="btn add-to-cart" data-id="4" data-name="سلطاني" data-price="850" data-image="img/a7.jpg">
+                <i class="fas fa-shopping-cart"></i> أضف إلى السلة
+              </button>
+              <button class="btn buy-now" data-id="4" data-name="سلطاني" data-price="850" data-image="img/a7.jpg">
+                <i class="fas fa-bolt"></i> اشتري الآن
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- المنتج 5 -->
+        <div class="product-card">
+          <div class="product-img-container">
+            <img src="img/a4.jpg" alt="عطر نسيم الصباح" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">نسيم الصباح</h3>
+            <p class="product-desc">عطر منعش يجمع بين الحمضيات والأعشاب</p>
+            <span class="product-price">600 ر.س</span>
+            <div class="product-actions">
+              <button class="btn add-to-cart" data-id="5" data-name="نسيم الصباح" data-price="600" data-image="img/a4.jpg">
+                <i class="fas fa-shopping-cart"></i> أضف إلى السلة
+              </button>
+              <button class="btn buy-now" data-id="5" data-name="نسيم الصباح" data-price="600" data-image="img/a4.jpg">
+                <i class="fas fa-bolt"></i> اشتري الآن
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم آراء العملاء -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">آراء عملائنا</h2>
+      <p>ما يقوله عملاؤنا عن تجربتهم مع عبير الخلود</p>
+      
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">"عطر سحر الليل رائع جدًا، يجذب الأنظار دائمًا ويدوم طويلاً. الشحن كان سريعًا والتغليف فاخر."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="سارة أحمد">
+            <div class="author-info">
+              <h4>سارة أحمد</h4>
+              <p>جدة</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="testimonial-text">"المستشار الذكي ساعدني في اختيار العطر المناسب لشخصيتي. تجربة تسوق فريدة."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="محمد السعدي">
+            <div class="author-info">
+              <h4>محمد السعدي</h4>
+              <p>الرياض</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">"جودة العطور استثنائية والتغليف رائع. أصبحت عبير الخلود وجهتي الأولى للعطور الفاخرة."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="نورة الفهد">
+            <div class="author-info">
+              <h4>نورة الفهد</h4>
+              <p>الدمام</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- صفحة الدفع -->
+  <section class="checkout-page" id="checkout-page">
+    <div class="container">
+      <button class="btn back-btn" id="back-to-products-from-checkout">
+        <i class="fas fa-arrow-right"></i> العودة إلى المتجر
+      </button>
+      
+      <h2 class="section-title">إتمام الطلب</h2>
+      
+      <div class="checkout-container">
+        <div class="checkout-form">
+          <h3>معلومات العميل</h3>
+          
+          <div class="form-group">
+            <label for="customer-name">الاسم الكامل</label>
+            <input type="text" id="customer-name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="customer-phone">رقم الهاتف</label>
+            <input type="tel" id="customer-phone" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="customer-email">البريد الإلكتروني (اختياري)</label>
+            <input type="email" id="customer-email">
+          </div>
+          
+          <div class="form-group">
+            <label for="customer-address">عنوان التوصيل</label>
+            <textarea id="customer-address" rows="3" required></textarea>
+          </div>
+          
+          <h3>طريقة الدفع</h3>
+          <div class="payment-methods">
+            <div class="payment-option">
+              <input type="radio" id="payment-card" name="payment-method" value="card" checked>
+              <label for="payment-card">
+                <i class="fas fa-credit-card"></i>
+                <span>الدفع بالبطاقة الإئتمانية</span>
+              </label>
+            </div>
+            
+            <div class="payment-option">
+              <input type="radio" id="payment-cash" name="payment-method" value="cash">
+              <label for="payment-cash">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>الدفع عند الاستلام</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="card-details" id="card-details">
+            <div class="form-group">
+              <label for="card-number">رقم البطاقة</label>
+              <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+            </div>
+            
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="card-expiry">تاريخ الانتهاء</label>
+                <input type="text" id="card-expiry" placeholder="MM/YY">
+              </div>
+              
+              <div class="form-group">
+                <label for="card-cvv">CVV</label>
+                <input type="text" id="card-cvv" placeholder="123">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="card-name">اسم صاحب البطاقة</label>
+              <input type="text" id="card-name">
+            </div>
+          </div>
+          
+          <button class="btn checkout-btn" id="confirm-purchase">تأكيد الطلب</button>
+        </div>
+        
+        <div class="order-summary">
+          <h3>ملخص الطلب</h3>
+          <div class="order-items" id="checkout-items">
+            <!-- سيتم إضافة العناصر هنا عبر JavaScript -->
+          </div>
+          
+          <div class="order-totals">
+            <div class="total-row">
+              <span>المجموع</span>
+              <span id="subtotal">0 ر.س</span>
+            </div>
+            
+            <div class="total-row">
+              <span>التوصيل</span>
+              <span id="shipping">25 ر.س</span>
+            </div>
+            
+            <div class="total-row final-total">
+              <span>الإجمالي</span>
+              <span id="total">0 ر.س</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- شكرًا للشراء -->
+  <section class="thank-you" id="thank-you">
+    <div class="container">
+      <i class="fas fa-check-circle"></i>
+      <h2 class="section-title">شكرًا لشرائك من عبير الخلود</h2>
+      <p>لقد تم استلام طلبك بنجاح وسيتم شحنه في أقرب وقت ممكن</p>
+      <p>رقم الطلب: #<span id="order-number">12345</span></p>
+      <a href="#" class="btn" id="back-to-home">العودة إلى الرئيسية</a>
+    </div>
+  </section>
+
+  <!-- قسم الاتصال -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <h2 class="section-title">تواصل معنا</h2>
+      <p>يسعدنا تواصلكم معنا لأي استفسار أو طلب</p>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h3>عنوان المتجر</h3>
+              <p>حي الملز، الرياض، المملكة العربية السعودية</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h3>رقم الهاتف</h3>
+              <p>+966 11 123 4567</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3>البريد الإلكتروني</h3>
+              <p>info@abeeralkhulood.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h3>ساعات العمل</h3>
+              <p>السبت إلى الخميس: 9 ص - 10 م</p>
+              <p>الجمعة: 4 م - 10 م</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" placeholder="الاسم الكامل" required>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" placeholder="البريد الإلكتروني" required>
+            </div>
+            
+            <div class="form-group">
+              <input type="tel" placeholder="رقم الهاتف">
+            </div>
+            
+            <div class="form-group">
+              <textarea placeholder="رسالتك" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn">إرسال الرسالة</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- الفوتر -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>عبير الخلود</h3>
+          <p>نقدم لكم أجود أنواع العطور الفاخرة ذات الروائح الأخاذة التي تترك أثرًا لا ينسى.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h3>روابط سريعة</h3>
+          <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#products">منتجاتنا</a></li>
+            <li><a href="#advisor">المستشار الذكي</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>المساعدة</h3>
+          <ul>
+            <li><a href="#">الشحن والتوصيل</a></li>
+            <li><a href="#">الإرجاع والاستبدال</a></li>
+            <li><a href="#">أسئلة شائعة</a></li>
+            <li><a href="#">تتبع الطلب</a></li>
+            <li><a href="#">سياسة الخصوصية</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>النشرة البريدية</h3>
+          <p>اشترك في نشرتنا البريدية لتصلك آخر العروض والأخبار</p>
+          <form class="newsletter-form">
+            <button type="submit">اشترك</button>
+            <input type="email" placeholder="بريدك الإلكتروني" required>
+            
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 عبير الخلود. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
