@@ -497,8 +497,3 @@ function showNotification(message, type = 'success') {
 
 // بدء التطبيق
 initApp();
-
-// بدء التطبيق
-initApp();
-
-
