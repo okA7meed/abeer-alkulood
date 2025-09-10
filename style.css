@@ -2140,4 +2140,9 @@ body.menu-open {
 @keyframes slideOut {
   from { transform: translateX(0); opacity: 1; }
   to { transform: translateX(100px); opacity: 0; }
+
+}
+
+html {
+  scroll-behavior: smooth;
 }
